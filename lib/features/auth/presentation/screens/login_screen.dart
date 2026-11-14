@@ -43,6 +43,7 @@ class LoginScreen extends StatelessWidget {
                   label: 'Password',
                   hint: 'Enter your password',
                   prefixIcon: Icons.lock_outline,
+                  isPassword: true,
                 ),
               ],
             ),
