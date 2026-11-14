@@ -11,7 +11,9 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(onPressed: (){},
             icon: Icon(Icons.arrow_back)),
-        title: Text('Ai Cv Match'),
+        title: Text('Login',style: TextStyle(
+          color: AppColor.navy,
+        ),),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -32,6 +34,11 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: AppSize.spaceSm),
                 Text('Email Address'),
 TextFormField(
+  decoration: InputDecoration(
+
+    border: OutlineInputBorder(),
+
+  ),
 
 ),
               ],
