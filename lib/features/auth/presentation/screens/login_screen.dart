@@ -3,9 +3,16 @@ import 'package:graduation_project/core/theme/app_color.dart';
 import 'package:graduation_project/core/theme/app_size.dart';
 import 'package:graduation_project/core/theme/app_text_style.dart';
 import 'package:graduation_project/core/widgets/app_text_field.dart';
-class LoginScreen extends StatelessWidget {
+import 'package:graduation_project/features/auth/presentation/widgets/remember_me_row.dart';
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  bool rememberMe = false;
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -44,6 +51,13 @@ class LoginScreen extends StatelessWidget {
                   hint: 'Enter your password',
                   prefixIcon: Icons.lock_outline,
                   isPassword: true,
+                ),
+                RememberMeRow(
+                  value: rememberMe,
+                  onChanged: (v)=>setState(() {
+                    rememberMe=v!;
+                  }),
+                  onForgotPassword: (){},
                 ),
               ],
             ),

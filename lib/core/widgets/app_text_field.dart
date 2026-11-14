@@ -11,12 +11,14 @@ class AppTextField extends StatefulWidget {
   final IconData? prefixIcon;
   final bool isPassword;
 
+
   @override
   State<AppTextField> createState() => _AppTextFieldState();
 }
 
 class _AppTextFieldState extends State<AppTextField> {
   bool _hidden =true;
+
   @override
   Widget build(BuildContext context) {
     return  Column(
@@ -62,6 +64,7 @@ borderSide: BorderSide(
           ),
 
         ),
+
 
       ],
 
