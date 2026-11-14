@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/core/theme/app_color.dart';
 import 'package:graduation_project/core/theme/app_size.dart';
 import 'package:graduation_project/core/theme/app_text_style.dart';
+import 'package:graduation_project/core/widgets/app_text_field.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
@@ -32,15 +33,17 @@ class LoginScreen extends StatelessWidget {
                 ),
                 ),
                 const SizedBox(height: AppSize.spaceSm),
-                Text('Email Address'),
-TextFormField(
-  decoration: InputDecoration(
-
-    border: OutlineInputBorder(),
-
-  ),
-
-),
+                const AppTextField(
+                  label: 'Email Address',
+                  hint: 'Enter your email',
+                  prefixIcon: Icons.email_outlined,
+                ),
+                const SizedBox(height: AppSize.spaceMd),
+                const AppTextField(
+                  label: 'Password',
+                  hint: 'Enter your password',
+                  prefixIcon: Icons.lock_outline,
+                ),
               ],
             ),
           ),
