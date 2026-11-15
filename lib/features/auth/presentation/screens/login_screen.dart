@@ -28,12 +28,12 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(AppSize.spaceLg),
+            padding: const EdgeInsets.all(AppSize.spaceMd),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AuthHeader(),
-                const SizedBox(height: AppSize.spaceSm),
+                const SizedBox(height: AppSize.spaceLg),
                 const AppTextField(
                   label: 'Email Address',
                   hint: 'Enter your email',
