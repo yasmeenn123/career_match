@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/theme/app_color.dart';
 import 'package:graduation_project/core/theme/app_size.dart';
 import 'package:graduation_project/core/theme/app_text_style.dart';
+import 'package:graduation_project/features/splash/presentation/widgets/splash_loader.dart';
+import 'package:graduation_project/features/splash/presentation/widgets/splash_logo.dart';
 
 import '../../../../core/router/app_routes.dart';
 
@@ -49,25 +51,8 @@ class _SplashViewState extends State<SplashView> {
             child: Column(
               children: [
                 Spacer(),
-                Container(
-                  decoration: BoxDecoration(
-                    boxShadow:[ BoxShadow(
-                      blurRadius: 40,
-                      spreadRadius: 2,
-                      color: AppColor.splashAccent.withValues(alpha: .25),
-                    ),],
-                    color: AppColor.navy,
-                    borderRadius: BorderRadius.circular(AppSize.radiusXl),
-                  ),
-                  height: 96,
-                  width: 96,
-          child: const Icon(
-            Icons.description_outlined,
-            color: AppColor.surface,
-            size: 44,),
-
-                ),
-                const SizedBox(height: AppSize.spaceLg),
+               SplashLogo(),
+               const SizedBox(height: AppSize.spaceLg),
                 Text('AI CV & Job Match',
                 textAlign: TextAlign.center,
                 style: AppTextStyle.headlineLg.copyWith(color: AppColor.surface),),
@@ -79,19 +64,8 @@ class _SplashViewState extends State<SplashView> {
                   style: AppTextStyle.bodyMd.copyWith(color: AppColor.splashSubtitle),
                 ),
                 Spacer(),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(AppSize.radiusFull),
-                  child: LinearProgressIndicator(
-                    minHeight: 6,
-                    color: AppColor.splashAccent,
-                    backgroundColor: AppColor.surface.withValues(alpha: .15),
-                  ),
-                ),
-                const SizedBox(height: AppSize.spaceSm),
-                Text(
-                  'Aligning Industry Career Benchmarks...',
-                  style: AppTextStyle.bodySm.copyWith(color: AppColor.splashSubtitle),
-                ),
+                SplashLoader(),
+
               ],
             ),
           ),
