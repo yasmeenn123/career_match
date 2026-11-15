@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/core/app%20constants/app_assets.dart';
 import 'package:graduation_project/core/theme/app_color.dart';
 import 'package:graduation_project/core/theme/app_size.dart';
 import 'package:graduation_project/core/theme/app_text_style.dart';
+import 'package:graduation_project/core/widgets/app_button.dart';
 import 'package:graduation_project/core/widgets/app_text_field.dart';
 import 'package:graduation_project/features/auth/presentation/widgets/remember_me_row.dart';
+import 'package:graduation_project/features/auth/presentation/widgets/social_login_button.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -59,6 +62,51 @@ class _LoginScreenState extends State<LoginScreen> {
                   }),
                   onForgotPassword: (){},
                 ),
+                const SizedBox(height: AppSize.spaceLg),
+                AppButton(text: 'Sign In',onPressed: (){},),
+                const SizedBox(height: AppSize.spaceMd),
+
+
+Row(
+  children: [
+    Expanded(
+      child: Divider(
+        thickness: 1,
+        color: AppColor.border,
+      ),
+          ),
+      const SizedBox(width: 12),
+      Text(
+        'Or continue with',
+        style: AppTextStyle.bodySm.copyWith(
+          color: AppColor.textSecondary,
+        ),
+      ),
+          const SizedBox(width: 12),
+
+    Expanded(
+      child: Divider(
+        thickness: 1,
+        color: AppColor.border,
+      ),
+    ),
+
+  ],
+),                const SizedBox(height: AppSize.spaceLg),
+
+
+                const SizedBox(height: AppSize.spaceMd),
+
+                Row(
+                  children: [
+                    SocialLoginButton(title: 'Google', imagePath: AppAssets.google, onPressed: (){}),
+                    const SizedBox(width: AppSize.spaceMd),
+
+                    SocialLoginButton(title: 'LinkedIn', imagePath: AppAssets.linkedin, onPressed: (){}),
+
+                  ],
+                )
+
               ],
             ),
           ),
