@@ -29,15 +29,12 @@ class _SplashViewState extends State<SplashView> {
 
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: AppColor.navy,
-
-
       body: Container(
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              begin: AlignmentGeometry.topRight,
+              begin: Alignment.topRight,
               end: Alignment.bottomLeft,
 
               colors: [        AppColor.splashGlowBlue,
@@ -54,7 +51,12 @@ class _SplashViewState extends State<SplashView> {
                 Spacer(),
                 Container(
                   decoration: BoxDecoration(
-                    color: AppColor.surface.withValues(alpha: 0.10),
+                    boxShadow:[ BoxShadow(
+                      blurRadius: 40,
+                      spreadRadius: 2,
+                      color: AppColor.splashAccent.withValues(alpha: .25),
+                    ),],
+                    color: AppColor.navy,
                     borderRadius: BorderRadius.circular(AppSize.radiusXl),
                   ),
                   height: 96,
