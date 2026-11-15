@@ -32,7 +32,10 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AuthHeader(),
+                AuthHeader(
+                  title: ' Welcome Back 👋',
+                  subtitle: 'Sign in to access your matched jobs and AI application tracker.',
+                ),
                 const SizedBox(height: AppSize.spaceLg),
                 const AppTextField(
                   label: 'Email Address',

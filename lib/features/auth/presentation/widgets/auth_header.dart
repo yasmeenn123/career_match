@@ -5,7 +5,9 @@ import '../../../../core/theme/app_size.dart';
 import '../../../../core/theme/app_text_style.dart';
 
 class AuthHeader extends StatelessWidget {
-  const AuthHeader({super.key});
+  const AuthHeader({super.key, required this.title, required this.subtitle});
+  final String title;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +15,11 @@ class AuthHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
 
       children: [
-        Text(' Welcome Back 👋',style: AppTextStyle.displayLg.copyWith(
+        Text(title,style: AppTextStyle.displayLg.copyWith(
             color: AppColor.navy
         ),),
         const SizedBox(height: AppSize.spaceSm),
-        Text('Sign in to access your matched jobs and AI application tracker.',
+        Text(subtitle,
           style: AppTextStyle.bodyLg.copyWith(
             color: AppColor.textSecondary,
           ),
