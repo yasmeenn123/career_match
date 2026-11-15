@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/core/app%20constants/app_assets.dart';
 import 'package:graduation_project/core/theme/app_color.dart';
 import 'package:graduation_project/core/theme/app_size.dart';
-import 'package:graduation_project/core/theme/app_text_style.dart';
 import 'package:graduation_project/core/widgets/app_button.dart';
 import 'package:graduation_project/core/widgets/app_text_field.dart';
+import 'package:graduation_project/features/auth/presentation/widgets/auth_header.dart';
 import 'package:graduation_project/features/auth/presentation/widgets/remember_me_row.dart';
-import 'package:graduation_project/features/auth/presentation/widgets/social_login_button.dart';
+import 'package:graduation_project/features/auth/presentation/widgets/social_login_section.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -29,19 +28,11 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(AppSize.spaceMd),
+            padding: const EdgeInsets.all(AppSize.spaceLg),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(' Welcome Back 👋',style: AppTextStyle.displayLg.copyWith(
-                  color: AppColor.navy
-                ),),
-                const SizedBox(height: AppSize.spaceSm),
-                Text('Sign in to access your matched jobs and AI application tracker.',
-                  style: AppTextStyle.bodyLg.copyWith(
-                  color: AppColor.textSecondary,
-                ),
-                ),
+                AuthHeader(),
                 const SizedBox(height: AppSize.spaceSm),
                 const AppTextField(
                   label: 'Email Address',
@@ -65,48 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: AppSize.spaceLg),
                 AppButton(text: 'Sign In',onPressed: (){},),
                 const SizedBox(height: AppSize.spaceMd),
-
-
-Row(
-  children: [
-    Expanded(
-      child: Divider(
-        thickness: 1,
-        color: AppColor.border,
-      ),
-          ),
-      const SizedBox(width: 12),
-      Text(
-        'Or continue with',
-        style: AppTextStyle.bodySm.copyWith(
-          color: AppColor.textSecondary,
-        ),
-      ),
-          const SizedBox(width: 12),
-
-    Expanded(
-      child: Divider(
-        thickness: 1,
-        color: AppColor.border,
-      ),
-    ),
-
-  ],
-),                const SizedBox(height: AppSize.spaceLg),
-
-
-                const SizedBox(height: AppSize.spaceMd),
-
-                Row(
-                  children: [
-                    SocialLoginButton(title: 'Google', imagePath: AppAssets.google, onPressed: (){}),
-                    const SizedBox(width: AppSize.spaceMd),
-
-                    SocialLoginButton(title: 'LinkedIn', imagePath: AppAssets.linkedin, onPressed: (){}),
-
-                  ],
-                )
-
+                SocialLoginSection(),
               ],
             ),
           ),
