@@ -8,7 +8,7 @@ import '../../features/auth/presentation/screens/register_screen.dart';
 class AppRouter {
   AppRouter._();
   static final GoRouter router=GoRouter(
-    initialLocation: AppRoutes.registerPath,//test
+    initialLocation: AppRoutes.splashPath,//test
       routes:[
         GoRoute(path: AppRoutes.splashPath,name: AppRoutes.splashName,
             builder: (context,state)=>SplashView()),

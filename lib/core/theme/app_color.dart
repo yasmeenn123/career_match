@@ -10,6 +10,10 @@ class AppColor {
   static const textPrimary = Color(0xFF182230);
   static const textSecondary = Color(0xFF667085);
   static const border = Color(0xFFE4E7EC);
+  static const splashAccent = Color(0xFF7EF5EF);
+  static const splashSubtitle = Color(0xFFA9CAEC);
+  static const splashGlowBlue = Color(0xFF1E5F86);
+  static const splashGlowTeal = Color(0xFF1F5A6B);
 
   static const success = Color(0xFF16845B);
   static const warning = Color(0xFFD98A16);
