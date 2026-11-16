@@ -64,21 +64,27 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   itemBuilder: (context,index)=>OnboardingPage(item: onBoardingItems[index]),
                 ),
               ),
+              const SizedBox(height: AppSize.spaceMd),
+
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children:               List.generate(
                     onBoardingItems.length
                     , (index)=>Container(
                   margin: EdgeInsets.symmetric(horizontal: 4),
                   decoration: BoxDecoration(
                     color: index==currentPage?AppColor.teal:AppColor.border,
-                    borderRadius: BorderRadius.circular(AppSize.radiusXl),
+                    borderRadius: BorderRadius.circular(AppSize.radiusFull),
                   ),
-                  width: index==currentPage?8:4,
+                  height: 8,
+                  width: index==currentPage?24:8,
 
 
                 ),),
 
               ),
+              const SizedBox(height: AppSize.spaceLg),
+
               AppButton(text: 'Get Started', onPressed: () {}),
 
             ],

@@ -14,19 +14,20 @@ class OnboardingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Column(
       children: [
-        Container(
-          height: 300,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: AppColor.blue.withValues(alpha: 0.08),
-            borderRadius: BorderRadius.circular(AppSize.radiusXl),
+        Expanded(
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: AppColor.blue.withValues(alpha: 0.08),
+              borderRadius: BorderRadius.circular(AppSize.radiusXl),
 
-          ),
-          child:
-           Icon(
-            item.icon,
-            size: 96,
-            color: AppColor.blue,
+            ),
+            child:
+             Icon(
+              item.icon,
+              size: 96,
+              color: AppColor.blue,
+            ),
           ),
         ),
         const SizedBox(height: AppSize.spaceLg),
