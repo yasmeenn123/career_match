@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:graduation_project/core/router/app_routes.dart';
 import 'package:graduation_project/features/onboarding/presentation/models/onboarding_item.dart';
 import 'package:graduation_project/features/onboarding/presentation/widgets/onboarding_page.dart';
 
@@ -18,12 +20,24 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   final _controller =PageController();
   int currentPage=0;
 
-
   @override
   void dispose(){
     _controller.dispose();
     super.dispose();
   }
+  void _onNext(){
+    if(currentPage==onBoardingItems.length - 1){
+      context.goNamed(AppRoutes.registerName);
+
+    }
+    else
+      {
+        _controller.nextPage(duration: Duration(milliseconds: 300),
+            curve: Curves.easeInOut);
+      }
+  }
+  @override
+
   Widget build(BuildContext context) {
 
     return Scaffold(
@@ -40,7 +54,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                     style: AppTextStyle.headlineSm.copyWith(color: AppColor.navy),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () =>context.goNamed(AppRoutes.registerName),
                     child: Text(
                       'Skip',
                       style: AppTextStyle.labelLg.copyWith(color: AppColor.blue),
@@ -78,14 +92,11 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                   ),
                   height: 8,
                   width: index==currentPage?24:8,
-
-
                 ),),
 
               ),
               const SizedBox(height: AppSize.spaceLg),
-
-              AppButton(text: 'Get Started', onPressed: () {}),
+              AppButton(text: currentPage == onBoardingItems.length - 1?'Get Started':'Next Page', onPressed:_onNext),
 
             ],
           ),
