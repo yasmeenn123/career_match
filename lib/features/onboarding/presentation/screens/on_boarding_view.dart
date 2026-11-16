@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/router/app_routes.dart';
 import 'package:graduation_project/features/onboarding/presentation/models/onboarding_item.dart';
+import 'package:graduation_project/features/onboarding/presentation/widgets/onboarding_dots.dart';
 import 'package:graduation_project/features/onboarding/presentation/widgets/onboarding_page.dart';
 
 import '../../../../core/theme/app_color.dart';
@@ -60,12 +61,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                       style: AppTextStyle.labelLg.copyWith(color: AppColor.blue),
                     ),
                   ),
-
                 ],
               ),
               const SizedBox(height: AppSize.spaceMd),
-
-
               Expanded(
                 child: PageView.builder(
                   onPageChanged: (index){
@@ -80,24 +78,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               ),
               const SizedBox(height: AppSize.spaceMd),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:               List.generate(
-                    onBoardingItems.length
-                    , (index)=>Container(
-                  margin: EdgeInsets.symmetric(horizontal: 4),
-                  decoration: BoxDecoration(
-                    color: index==currentPage?AppColor.teal:AppColor.border,
-                    borderRadius: BorderRadius.circular(AppSize.radiusFull),
-                  ),
-                  height: 8,
-                  width: index==currentPage?24:8,
-                ),),
-
-              ),
+             OnboardingDots(count: onBoardingItems.length, currentIndex: currentPage),
               const SizedBox(height: AppSize.spaceLg),
               AppButton(text: currentPage == onBoardingItems.length - 1?'Get Started':'Next Page', onPressed:_onNext),
-
             ],
           ),
         ),
@@ -105,5 +88,4 @@ class _OnBoardingViewState extends State<OnBoardingView> {
     );
   }
 }
-
 
