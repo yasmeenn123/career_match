@@ -20,7 +20,7 @@ Future<void>_pickFile() async{
     allowedExtensions:  ['pdf', 'docx'],
 
   );
-  if(result==null)return;
+  if(result.isEmpty)return;
   final file = result.first;
 
   const maximize=5* 1024 * 1024;
