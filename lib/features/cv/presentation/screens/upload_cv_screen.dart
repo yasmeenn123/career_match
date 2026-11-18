@@ -5,6 +5,8 @@ import 'package:graduation_project/core/theme/app_text_style.dart';
 import 'package:graduation_project/core/widgets/app_button.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:graduation_project/features/cv/presentation/widgets/uploaded_file_card.dart';
+
+import '../widgets/upload_dropzone.dart';
 class UploadCvScreen extends StatefulWidget {
   const UploadCvScreen({super.key});
 
@@ -61,46 +63,13 @@ Future<void>_pickFile() async{
                   color: AppColor.textSecondary,
 ),),
               const SizedBox(height: AppSize.spaceLg),
-InkWell(
-  onTap: _pickFile,
-  borderRadius: BorderRadius.circular(AppSize.radiusLg),
-  child: Container(
-    padding: EdgeInsets.all(AppSize.spaceXl),
-
-    width: double.infinity,
-    decoration: BoxDecoration(
-      color:AppColor.blue.withValues(alpha: .06),
-      borderRadius: BorderRadius.circular(AppSize.radiusLg),
-border: Border.all(color: AppColor.blue),
-
-    ),
-    child: Column(
-      children: [
-        Icon(Icons.cloud_upload_outlined,size: 56,color: AppColor.blue,),
-        const SizedBox(height: AppSize.spaceMd),
-        Text(
-          'Tap to browse your document',
-          style: AppTextStyle.labelLg.copyWith(color: AppColor.navy),
-        ),
-        const SizedBox(height: AppSize.spaceXs),
-        Text(
-          'PDF or DOCX, max 5MB',
-          style: AppTextStyle.bodySm.copyWith(color: AppColor.textSecondary),
-        ),
-
-
-      ],
-    ),
-  ),
-),
+              UploadDropzone(onTap: _pickFile),
               if(_file!=null)
                 Column(
                   children: [
                     const SizedBox(height: AppSize.spaceMd),
-
 UploadedFileCard(fileName: _file!.name, onDelete: ()=>setState(() {
   _file=null;
-
 }),
 ),
                   ],
