@@ -22,6 +22,7 @@ shape: RoundedRectangleBorder(
   borderRadius: BorderRadius.circular(AppSize.radiusMd),
 
 ),
+disabledBackgroundColor: AppColor.navy.withValues(alpha: .4),
 backgroundColor: AppColor.navy,
             foregroundColor: AppColor.surface,
           ),

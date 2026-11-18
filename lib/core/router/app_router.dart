@@ -1,15 +1,15 @@
 import 'package:go_router/go_router.dart';
 import 'package:graduation_project/core/router/app_routes.dart';
 import 'package:graduation_project/features/auth/presentation/screens/login_screen.dart';
+import 'package:graduation_project/features/cv/presentation/screens/upload_cv_screen.dart';
 import 'package:graduation_project/features/splash/presentation/screens/splash_view.dart';
-
 import '../../features/auth/presentation/screens/register_screen.dart';
+import '../../features/cv/presentation/screens/cv_processing_screen.dart';
 import '../../features/onboarding/presentation/screens/on_boarding_view.dart';
-
 class AppRouter {
   AppRouter._();
   static final GoRouter router=GoRouter(
-    initialLocation: AppRoutes.onBoardingName,//test
+    initialLocation: AppRoutes.uploadCvName,//test
       routes:[
         GoRoute(path: AppRoutes.splashPath,name: AppRoutes.splashName,
             builder: (context,state)=>SplashView()),
@@ -19,6 +19,14 @@ class AppRouter {
             builder: (context,state)=>RegisterScreen()),
         GoRoute(path: AppRoutes.onBoardingPath,name: AppRoutes.onBoardingName,
             builder: (context,state)=>OnBoardingView()),
+        GoRoute(path: AppRoutes.uploadCvPath,name: AppRoutes.uploadCvPath,
+            builder: (context,state)=>UploadCvScreen()),
+        GoRoute(
+          path: AppRoutes.cvProcessingPath,
+          name: AppRoutes.cvProcessingName,
+          builder: (context, state) => const CvProcessingScreen(),
+        ),
+
 
 
       ] );

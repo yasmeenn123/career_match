@@ -13,6 +13,10 @@ class AppRoutes {
   static const String loginName ='login';
   static const String registerPath ='/register';
   static const String registerName ='register';
+  static const String uploadCvPath = '/upload-cv';
+  static const String uploadCvName = 'upload-cv';
+  static const String cvProcessingPath = '/cv-processing';
+  static const String cvProcessingName = 'cv-processing';
 
 
 
