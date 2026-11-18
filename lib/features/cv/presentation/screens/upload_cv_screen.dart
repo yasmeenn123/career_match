@@ -4,6 +4,7 @@ import 'package:graduation_project/core/theme/app_size.dart';
 import 'package:graduation_project/core/theme/app_text_style.dart';
 import 'package:graduation_project/core/widgets/app_button.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:graduation_project/features/cv/presentation/widgets/uploaded_file_card.dart';
 class UploadCvScreen extends StatefulWidget {
   const UploadCvScreen({super.key});
 
@@ -97,10 +98,11 @@ border: Border.all(color: AppColor.blue),
                   children: [
                     const SizedBox(height: AppSize.spaceMd),
 
-                    Text(_file!.name,
-                      style: AppTextStyle.bodyMd.copyWith(color: AppColor.navy),
+UploadedFileCard(fileName: _file!.name, onDelete: ()=>setState(() {
+  _file=null;
 
-                    )
+}),
+),
                   ],
                 ),
               if(_error !=null)
@@ -115,11 +117,6 @@ border: Border.all(color: AppColor.blue),
               const Spacer(),
 
               AppButton(text: 'Process CV with AI',onPressed: _file != null?(){}:null,),
-
-
-
-
-
 
             ],
           ),
