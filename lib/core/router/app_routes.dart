@@ -6,9 +6,6 @@ class AppRoutes {
   static const String onBoardingPath = '/onBoarding';
   static const String onBoardingName = 'onBoarding';
 
-
-
-
   static const String loginPath ='/login';
   static const String loginName ='login';
   static const String registerPath ='/register';
@@ -18,8 +15,7 @@ class AppRoutes {
   static const String cvProcessingPath = '/cv-processing';
   static const String cvProcessingName = 'cv-processing';
 
-
-
-
+  static const String cvReviewPath = '/cv-review';
+  static const String cvReviewName = 'cv-review';
 
 }

@@ -5,15 +5,12 @@ import 'package:graduation_project/core/theme/app_text_style.dart';
 import 'package:graduation_project/core/widgets/app_button.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:graduation_project/features/cv/presentation/widgets/uploaded_file_card.dart';
-
 import '../widgets/upload_dropzone.dart';
 class UploadCvScreen extends StatefulWidget {
   const UploadCvScreen({super.key});
-
   @override
   State<UploadCvScreen> createState() => _UploadCvScreenState();
 }
-
 class _UploadCvScreenState extends State<UploadCvScreen> {
 PlatformFile? _file;
 String?_error;
@@ -21,11 +18,9 @@ Future<void>_pickFile() async{
   final result=await FilePicker.pickFiles(
     type: FileType.custom,
     allowedExtensions:  ['pdf', 'docx'],
-
   );
   if(result.isEmpty)return;
   final file = result.first;
-
   const maximize=5* 1024 * 1024;
   final size=await file.length();
   if(size!=null && size>maximize){
@@ -34,7 +29,6 @@ Future<void>_pickFile() async{
       _error = 'File is too large (max 5MB)';
     });
     return;
-
   }
   setState(() {
     _file = file;
@@ -82,11 +76,8 @@ UploadedFileCard(fileName: _file!.name, onDelete: ()=>setState(() {
                     style: AppTextStyle.bodySm.copyWith(color: AppColor.error),
                   ),
                 ),
-
               const Spacer(),
-
               AppButton(text: 'Process CV with AI',onPressed: _file != null?(){}:null,),
-
             ],
           ),
         ),
